@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
- groupify :group_member
- groupify :named_group_member
+
+groupify :group_member
+groupify :named_group_member
+
 
  has_many :posts
  has_many :comments
