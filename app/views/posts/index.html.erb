@@ -1,0 +1,6 @@
+
+<% @posts.each do |p| %>
+<h3><%= p.content %></h3>
+<p><%= p.user.name %></p>
+<% end %>
+<%= link_to 'LogOut', destroy_user_session_path, method: :delete %>

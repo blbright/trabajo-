@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322201450) do
+ActiveRecord::Schema.define(version: 20160322212108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,15 +27,25 @@ ActiveRecord::Schema.define(version: 20160322201450) do
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
-  create_table "groups", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "group_memberships", force: :cascade do |t|
+    t.integer  "member_id",       null: false
+    t.string   "member_type",     null: false
+    t.integer  "group_id"
+    t.string   "group_type"
+    t.string   "group_name"
+    t.string   "membership_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "groups", ["post_id"], name: "index_groups_on_post_id", using: :btree
-  add_index "groups", ["user_id"], name: "index_groups_on_user_id", using: :btree
+  add_index "group_memberships", ["group_name"], name: "index_group_memberships_on_group_name", using: :btree
+  add_index "group_memberships", ["group_type", "group_id"], name: "index_group_memberships_on_group_type_and_group_id", using: :btree
+  add_index "group_memberships", ["member_type", "member_id"], name: "index_group_memberships_on_member_type_and_member_id", using: :btree
+
+  create_table "groups", force: :cascade do |t|
+    t.string "type"
+    t.string "name"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.text     "content"
@@ -70,7 +80,5 @@ ActiveRecord::Schema.define(version: 20160322201450) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "groups", "posts"
-  add_foreign_key "groups", "users"
   add_foreign_key "posts", "users"
 end
