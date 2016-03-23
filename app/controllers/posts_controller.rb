@@ -1,8 +1,5 @@
 class PostsController < ApplicationController
 
-
-
-
  def index
   @posts = Post.all.reverse_order
   @post = Post.new
@@ -11,7 +8,7 @@ class PostsController < ApplicationController
  def create
   @post = Post.new(post_params)
   @post.save
-redirect_to :back
+  redirect_to :back
  end
 
  def update
@@ -27,6 +24,7 @@ redirect_to :back
 
  def edit
   @post = Post.find(params[:id])
+  @user = @post.user
  end
 
  def show
