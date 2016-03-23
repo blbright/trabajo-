@@ -1,3 +1,24 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.log-in{
+  width: 600px;
+  margin:0 auto;
+  text-align:center;
+  padding-top:10%;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.panel-heading{
+  background-color:#fff;
+}
+
+.form-control{
+  width: 500px;
+  text-align: center;
+  margin:auto;
+}
+
+.panel-body p{
+  color:#555;
+}
