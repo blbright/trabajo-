@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def profile
    @user = current_user
    @posts = current_user.posts.reverse_order
@@ -7,11 +8,32 @@ class UsersController < ApplicationController
   end
 
   def edit
+   @user = current_user
   end
 
   def show
   @post = Post.find(params[:id])
+  @user = current_user
  end
+
+
+  def update
+     @user = current_user.update_attributes(user_params)
+     redirect_to '/profile'
+   end
+
+   def destroy
+     @user = User.find(params[:id])
+     @user.destroy
+     redirect_to '/'
+   end
+
+   private
+
+   def user_params
+    params.require(:user).permit(:name, :email, :experience,:description,:current_position)
+   end
+
 
 
 end

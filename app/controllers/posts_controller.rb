@@ -3,14 +3,27 @@ class PostsController < ApplicationController
 
  def index
   @posts = Post.all.reverse_order
+ end
+
+ def show
+  @post = Post.find(params[:id])
+ end
+
+ def new
   @post = Post.new
  end
 
  def create
   @post = Post.new(post_params)
   @post.save
-redirect_to :back
+  redirect_to :back
  end
+
+
+ def edit
+  @post = Post.find(params[:id])
+  redirect_to :back
+  end
 
  def update
   @post = Post.find(params[:id])
@@ -23,15 +36,10 @@ redirect_to :back
         format.json { render json: @board.errors, status: :unprocessable_entity }
       end
     end
-  end
+end
 
- def edit
-  @post = Post.find(params[:id])
- end
 
- def show
-  @post = Post.find(params[:id])
- end
+
 
 def destroy
   @post = Post.find(params[:id])
