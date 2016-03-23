@@ -248,3 +248,53 @@ div.user-menu div.user-menu-content:not(.active){
 .btn-wide {
  width: 50%;
 }
+
+
+
+/* edit user */
+
+#edit {
+ text-align: center;
+ .form{
+  &-group{
+   margin: 0 auto;
+  }
+  &-control{
+   text-align: center;
+   width: 60%;
+   margin: 0 auto;
+  }
+
+ }
+}
+
+.btn {
+ border-radius: 2px !important;
+}
+
+.edit-panel {
+ margin: 0 auto;
+ width: 80%;
+}
+.btn-submit {
+ width: 60%;
+ margin: 10px auto;
+}
+
+/* bye user */
+#delete {
+ text-align: center;
+ h1 {
+  font-size: 80px;
+
+ }
+ h2 {
+  font-size: 70px;
+ }
+ h3 {
+  font-size: 60px;
+ }
+ h4 {
+  font-size: 50px;
+ }
+}
