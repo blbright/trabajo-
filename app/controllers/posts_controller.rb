@@ -33,7 +33,7 @@ redirect_to :back
   @post = Post.find(params[:id])
  end
 
- def destroy
+def destroy
   @post = Post.find(params[:id])
   @post.destroy
   redirect_to :back
