@@ -4,6 +4,10 @@
 html, body {
  height: 100%;
 }
+
+body {
+ overflow-x: hidden;
+}
 .navbar-default .navbar-brand {
  font-size: 40px;
  font-family: 'Pacifico', cursive;
@@ -51,21 +55,8 @@ body {
 * {
     margin: 0;
 }
-#foot {
- color: #65c6c3;;
- text-align: center;
- font-size: 15px;
- font-family: 'Montserrat', serif;
-}
-.wrapper {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
-}
-.footer, .push {
-  height: 155px; /* .push must be the same height as .footer */
-}
+
+
 
 .texas {
  margin-top: 20px;
