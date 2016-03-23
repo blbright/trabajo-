@@ -16,11 +16,9 @@ redirect_to :back
   @post = Post.find(params[:id])
     respond_to do |format|
       if @post.update(post_params)
-        format.html {  redirect_to '/'}
-        format.json { render :show, status: :ok, location: @board }
+        format.html {  redirect_to :back}
       else
         format.html { render :edit }
-        format.json { render json: @board.errors, status: :unprocessable_entity }
       end
     end
   end
