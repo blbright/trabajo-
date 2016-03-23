@@ -39,7 +39,7 @@
            <div class="col-sm-6">
            <% if p.user == current_user %>
             <%= link_to '', edit_post_path(p), class: 'fa fa-cog fa-3x pull-right' %>
-            <%= link_to '', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-3x fa-trash pull-right' %>
+            <%= link_to '', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-3x fa-trash-o pull-right' %>
            <% end %>
           </div>
          </div>
