@@ -2,16 +2,29 @@ class PostsController < ApplicationController
 
 
  def index
-  @posts = Post.all
- end
- def new
+  @posts = Post.all.reverse_order
   @post = Post.new
  end
 
  def create
   @post = Post.new(post_params)
   @post.save
-  redirect_to @post
+redirect_to :back
+ end
+
+ def update
+  @post = Post.find(params[:id])
+    respond_to do |format|
+      if @post.update(post_params)
+        format.html { redirect_to '/', notice: 'Post was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
+ def edit
+  @post = Post.find(params[:id])
  end
 
  def show
@@ -21,7 +34,7 @@ class PostsController < ApplicationController
  def destroy
   @post = Post.find(params[:id])
   @post.destroy
-  redirect_to '/'
+  redirect_to :back
  end
 
  private
