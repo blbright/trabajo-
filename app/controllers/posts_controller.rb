@@ -16,7 +16,7 @@ redirect_to :back
   @post = Post.find(params[:id])
     respond_to do |format|
       if @post.update(post_params)
-        format.html {  redirect_to :back}
+        format.html { redirect_to session.delete(:return_to)}
       else
         format.html { render :edit }
       end
@@ -25,6 +25,7 @@ redirect_to :back
 
  def edit
   @post = Post.find(params[:id])
+  session[:return_to] ||= request.referer
  end
 
  def show
