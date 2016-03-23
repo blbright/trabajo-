@@ -148,9 +148,15 @@
         </div>
     </div>
 </div>
-<ul>
-<% @posts.each do |post| %>
+<div id="index">
+<h1>Hello <%= current_user.name %></h1>
+<% @posts.each do |p| %>
+ <h3><%= p.content %></h3>
+ <p><%= p.user.name %></p>
+ <%= link_to 'Edit', edit_post_path(p) %>
+ <%= link_to 'Destroy', p, method: :delete, data: { confirm: 'Are you sure?' } %>
+ <% end %>
 
-<% end %>
-</ul>
-<p>Find me in app/views/users/profile.html.erb</p>
+<%= render 'form' %>
+
+</div>
