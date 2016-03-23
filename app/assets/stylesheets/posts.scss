@@ -2,15 +2,46 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.navbar-brand {
+.navbar-default .navbar-brand {
  font-size: 30px;
- font-family: 'Lato', sans-serif;
+ font-family: 'Pacifico', cursive;
+ color: red;
+ margin: 15px 0;
+
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  background-color: transparent;
+  color: #337ab7;;
 }
 .navbar-custom {
- margin-bottom: 30px;
+ background-color: #D5896F;
+ border-radius: 3px;
+ height: 50px;
+}
+.navbar-toggle {
+ margin: 25px 0;
+ border: none;
+ &:hover {
+    background: transparent !important;
+  }
 }
 
-
 body {
- margin-top: 80px;
+ margin-top: 120px;
+}
+.navbar-nav {
+ margin-top: 3px;
+ font-family: 'Montserrat',serif;
+ margin-top: 15px;
+
+}
+.dropdown-toggle {
+ font-size: 15px;
+ text-transform: uppercase;
+
+}
+.dropdown-menu {
+ text-align: right;
+ border-radius: 2px;
 }
