@@ -3,7 +3,8 @@
 <% @posts.each do |p| %>
  <h3><%= p.content %></h3>
  <p><%= p.user.name %></p>
- <%= %>
+ <%= link_to 'Edit', edit_post_path(p) %>
+ <%= link_to 'Destroy', p, method: :delete, data: { confirm: 'Are you sure?' } %>
 
  <% end %>
 </div>
