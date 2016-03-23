@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Trabajo</title>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans|Lato:400,300,100|Pacifico|Montserrat' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans|Lato:400,300,100|Pacifico|Montserrat|Roboto' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -28,14 +28,13 @@
             <li><a href="/profile">Profile</a></li>
             <li><a href="#">Account Settings</a></li>
             <li role="separator" class="divider"></li>
-
             <li><%= link_to 'LogOut', destroy_user_session_path, method: :delete %></li>
           </ul>
         </li>
       </ul>
       <% else %>
       <ul class="nav navbar-nav navbar-right">
-       <li><a href="/users/sign_up" class="btn btn-md btn-primary">Sign Up</a></li>
+       <li class="white-btn"><a href="/users/sign_up" class="btn btn-md btn-signup">Sign Up</a></li>
       </ul>
       <% end%>
     </div><!-- /.navbar-collapse -->
@@ -46,7 +45,8 @@
 
 <%= yield %>
 </body>
-<div class="push"></div>
+<div class="push">
+</div>
  </div>
 </div>
  <footer class="footer">
