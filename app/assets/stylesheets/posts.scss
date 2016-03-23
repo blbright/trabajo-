@@ -1,13 +1,14 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+html, body {
+ height: 100%;
+}
 .navbar-default .navbar-brand {
  font-size: 30px;
  font-family: 'Pacifico', cursive;
  color: red;
  margin: 15px 0;
-
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -19,6 +20,7 @@
  border-radius: 3px;
  height: 50px;
 }
+
 .navbar-toggle {
  margin: 25px 0;
  border: none;
@@ -44,4 +46,30 @@ body {
 .dropdown-menu {
  text-align: right;
  border-radius: 2px;
+}
+* {
+    margin: 0;
+}
+#foot {
+ color: #fff;
+ text-align: center;
+ font-size: 22px;
+ font-family: 'Lato', serif;
+ font-weight: 100;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 155px; /* .push must be the same height as .footer */
+}
+.footer {
+ background-color: #333;
+}
+.texas {
+ margin-top: 20px;
+ width: 90px;
 }
