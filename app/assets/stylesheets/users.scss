@@ -224,3 +224,27 @@ div.user-menu div.user-menu-content:not(.active){
         max-height: 400px;
     }
 }
+
+.log-in {
+  width: 50%;
+  margin:0 auto;
+  text-align:center;
+  padding-top:10%;
+  font-family: 'Roboto', Arial, sans-serif;
+  .panel-heading {
+    background-color: #F90133;
+  }
+  .panel-body {
+  background-color: #E4E6E8;
+  }
+  .form-control {
+    width: 75%;
+    margin:auto;
+  }
+}
+.panel-body {
+  color:#555;
+}
+.btn-wide {
+ width: 50%;
+}
