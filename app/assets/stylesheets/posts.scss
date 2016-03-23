@@ -23,6 +23,7 @@ html, body {
 
 .navbar-toggle {
  margin: 25px 0;
+ margin-right: 10px;
  border: none;
  &:hover {
     background: transparent !important;
@@ -37,11 +38,11 @@ body {
  font-family: 'Montserrat',serif;
  margin-top: 15px;
 
+
 }
 .dropdown-toggle {
  font-size: 15px;
  text-transform: uppercase;
-
 }
 .dropdown-menu {
  text-align: right;
@@ -51,25 +52,37 @@ body {
     margin: 0;
 }
 #foot {
- color: #fff;
+ color: #65c6c3;;
  text-align: center;
- font-size: 22px;
- font-family: 'Lato', serif;
- font-weight: 100;
+ font-size: 15px;
+ font-family: 'Montserrat', serif;
 }
 .wrapper {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
 }
 .footer, .push {
-    height: 155px; /* .push must be the same height as .footer */
+  height: 155px; /* .push must be the same height as .footer */
 }
-.footer {
- background-color: #333;
-}
+
 .texas {
  margin-top: 20px;
- width: 90px;
+ width: 78px;
+}
+
+.btn-signup {
+ background-color: #65c6c3;
+ color: #fff;
+}
+
+.white-btn {
+ a {
+  color: #fff !important;
+ }
+ a:hover {
+  background-color: #5bd2ce !important;
+ }
+
 }
