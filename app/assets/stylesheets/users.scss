@@ -303,6 +303,10 @@ div.user-menu div.user-menu-content:not(.active){
 #index {
  margin: 0 auto;
  width: 100%;
+
+ h1 {
+  font-size: 28px;
+ }
  .actions {
   display: inline-block;
  }
@@ -314,5 +318,13 @@ div.user-menu div.user-menu-content:not(.active){
 
 }
 .img-size {
- width: 150px;
+ width: 220px;
+
+}
+.about {
+ font-size: 18px;
+ margin-bottom: -3px;
+}
+#name {
+ font-size: 25px;
 }

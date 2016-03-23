@@ -12,9 +12,9 @@ class UsersController < ApplicationController
   end
 
   def show
-  @post = Post.find(params[:id])
-  @user = current_user
- end
+   @user = User.find(params[:id])
+   @posts = @user.posts
+  end
 
 
   def update
