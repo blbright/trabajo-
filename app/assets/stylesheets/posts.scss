@@ -23,6 +23,7 @@ html, body {
 
 .navbar-toggle {
  margin: 25px 0;
+ margin-right: 10px;
  border: none;
  &:hover {
     background: transparent !important;
@@ -42,7 +43,6 @@ body {
 .dropdown-toggle {
  font-size: 15px;
  text-transform: uppercase;
-
 }
 .dropdown-menu {
  text-align: right;
