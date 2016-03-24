@@ -10,6 +10,13 @@
  font-size: 22px;
  margin-top: 20px;
 }
+.col-centered {
+  text-align: center;
+  .btn-new {
+    width: 250px;
+    margin-bottom: 20px;
+  }
+}
 /* ------- */
 
 .log-in {
@@ -102,7 +109,7 @@
  }
  .actions {
   display: inline-block;
-  
+
  }
  .form{
   &-control {
