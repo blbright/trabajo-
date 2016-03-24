@@ -10,6 +10,7 @@
       <div class="panel-body">
       <%= image_tag(current_user.avatar.url(:medium), :class => "img-responsive thumbnail") %>
        <h1><%= current_user.name %></h1>
+       <p><%= current_user.username %></p>
         <p><%= current_user.current_position %></p>
          <p class="about">Bio:</p>
          <p><%= current_user.description %></p>
@@ -46,14 +47,13 @@
           <div class="col-sm-1">
 
 
-
            <a href="users/<%= p.user.id %>"><%= image_tag(p.user.avatar.url(:thumb), :class => 'img-responsive') %></a>
 
 
           </div>
           <div class="col-sm-11 posts">
            <div class="col-sm-12">
-           <h3><%= p.user.name %><span class="handle"><span> &iexcl;<%= p.user.name %>!:</span></h3>
+           <h3><%= p.user.name %><span class="handle"><span> &iexcl;<%= p.user.username %>!:</span></h3>
 
             <p><%= p.content %></p>
             <% @posts_comment.each do |comment|%>

@@ -10,13 +10,12 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
+    devise_parameter_sanitizer.for(:sign_up) << :username
     devise_parameter_sanitizer.for(:sign_up) << :avatar
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:avatar) }
 
   end
-  def create
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(params[:comment])
-    redirect_to post_path(@post)
-  end
+
+
 end
