@@ -19,7 +19,7 @@ body {
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
   background-color: transparent;
-  color: #337ab7;;
+  color: #337ab7;
 }
 .navbar-custom {
  background-color: #D5896F;
@@ -80,7 +80,9 @@ body {
 
 }
 
-
+.btn-post {
+ margin-top: 10px;
+}
 .handle {
  font-size: 12px;
  color: #d3d3d3;

@@ -2,6 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+
+
+/* landing */
+#header {
+ margin-top: -40px;
+ background-color: #65c6c3;
+ height: 800px;
+ text-align: center;
+ color: white;
+ a {
+  font-family: 'Lato', serif;
+ }
+ h1 {
+  font-size: 200px;
+  font-family: 'Pacifico', serif;
+
+ }
+ h3 {
+  font-family: 'Pacifico', serif;
+  color: #337ab7;
+ }
+}
+
+
+#login {
+ margin-bottom: 100px;
+}
+
+
+
+
 /* profile */
 .thumbnail {
   width: 100%;
@@ -21,6 +54,29 @@
 }
 /* ------- */
 
+.img-circle {
+ &-prof {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+ }
+}
+.prof-img {
+ width: 250px;
+}
+
+#taco {
+ width: 200px;
+ margin-top: 20px;
+ padding-bottom: -30px;
+}
+
+.btn-login {
+ background-color: red;
+ border-radius: 50%;
+ font-family: 'Pacifico', serif;
+}
+
 .log-in {
   width: 50%;
   margin:0 auto;
@@ -28,7 +84,7 @@
   padding-top:10%;
   font-family: 'Roboto', Arial, sans-serif;
   .panel-heading {
-    background-color: #F90133;
+
   }
   .panel-body {
   background-color: #E4E6E8;
@@ -36,6 +92,10 @@
   .form-control {
     width: 75%;
     margin:auto;
+  }
+  .btn-block {
+   margin: 0 auto;
+   width: 75% !important;
   }
 }
 .panel-body {
@@ -110,6 +170,10 @@
 #index {
  margin: 0 auto;
  width: 100%;
+
+ .fa {
+  margin: 0 5px;
+ }
  a {
   text-decoration: none;
  }
@@ -141,4 +205,17 @@
 }
 #name {
  font-size: 25px;
+}
+.username {
+ color: #808080;
+}
+
+@media screen and (max-width: 900px) {
+ .panel-default {
+  text-align: center;
+ }
+ .panel-body {
+  width: 100%;
+  margin: 0 auto !important;
+ }
 }

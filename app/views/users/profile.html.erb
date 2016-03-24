@@ -1,32 +1,38 @@
-<link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
 <div class="container">
   <div class="row">
+   <div class="user-prof">
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="col-md-12">
           <div class="row">
-            <div class="col-md-6">
+           <center>
+           <div class="col-md-6 user-pic">
+             <%= image_tag(current_user.avatar.url(:medium), :class => "img-responsive thumbnail prof-img img-circle-prof") %>
+           </div>
+          </center>
+            <div class="col-md-6 right-text">
               <span id="name"><h1><%= current_user.name %></h1></span>
+              <h2 class="username">&iexcl;<%= current_user.username %>!</h2>
               <h4 class="prof-info">Experience</h4>
               <p><%= current_user.experience %> years</p>
               <h4 class="prof-info">About Me</h4>
               <p><%= current_user.description %></p>
               <h4 class="prof-info">Position</h4>
               <p><%= current_user.current_position%></p>
+
             </div>
-            <div class="col-md-6 user-pic">
-              <%= image_tag(current_user.avatar.url(:medium), :class => "img-responsive thumbnail") %>
-            </div>
+
           </div>
+         </div>
           <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Post</h4>
+                  <h4 class="modal-title" id="myModalLabel">New Post</h4>
                 </div>
                 <div class="modal-body">
-                  <%= render 'form' %>
+                  <%= render 'posts/form' %>
                 </div>
               </div>
             </div>
@@ -36,35 +42,38 @@
     </div>
   </div>
 </div>
-<div class="row row-centered">
+<div class="container">
+<div class="row">
   <div class="col-sm-12 col-centered">
     <button type="button" class="btn btn-primary btn-lg btn-new" data-toggle="modal" data-target="#myModal">
       New Post
     </button>
    </div>
 </div>
-<div class="col-sm-12">
-  <ul class="list-group">
-    <% @posts.each do |p| %>
-      <li class="list-group-item">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-2">
-              <a href="users/<%= p.user.id %>"><%= image_tag(p.user.avatar.url(:medium), :class => "img-responsive thumbnail") %></a>
-            </div>
-            <div class="col-sm-10 posts">
-              <p>&iexcl;<%= p.user.name %>!: <%= p.content %></p>
-              <div class="col-sm-6">
-                <% if p.user == current_user %>
-                  <%= link_to '', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-3x fa-trash-o pull-right' %>
-                  <%= link_to '', edit_post_path(p), class: 'fa fa-pencil-square-o fa-3x pull-right' %>
-                <% end %>
+</div>
+<div class="container">
+ <div class="row">
+  <div class="col-sm-12">
+    <ul class="list-group">
+      <% @posts.each do |p| %>
+        <li class="list-group-item">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-2">
+                <a href="users/<%= p.user.id %>"><%= image_tag(p.user.avatar.url(:medium), :class => "img-responsive thumbnail") %></a>
+              </div>
+              <div class="col-sm-10 posts">
+               <blockquote>
+                <p><%= p.content %></p>
+               </blockquote>
+               <%= link_to '', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-2x fa-trash-o' %>
+               <%= link_to '', edit_post_path(p), class: 'fa fa-pencil-square-o fa-2x' %>
               </div>
             </div>
           </div>
-        </div>
-      </li>
-    <% end %>
-  </ul>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+ </div>
 </div>
-

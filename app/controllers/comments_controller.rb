@@ -1,8 +1,10 @@
 class CommentsController < ApplicationController
+ 
   def new
     @post = Post.find(params[:post_id])
     @comment = Comment.new
   end
+
   def create
     @post = Post.find(params[:post_id])
     @comment = Comment.new(comment_params)
@@ -10,6 +12,7 @@ class CommentsController < ApplicationController
     @comment.save
     redirect_to '/'
   end
+
   def destroy
     @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])

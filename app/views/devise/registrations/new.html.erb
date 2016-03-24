@@ -11,6 +11,8 @@
           <div class="form-group">
             <%= f.label :name %><br>
             <%= f.text_field :name, autofocus: true, class: "form-control" %><br>
+            <%= f.label :username %><br>
+            <%= f.text_field :username, class: "form-control" %><br>
             <%= f.label :email %><br>
             <%= f.email_field :email, class: "form-control" %><br>
             <%= f.label :password %>
@@ -21,7 +23,7 @@
             <%= f.label :password_confirmation %><br>
             <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %><br>
             <div class="actions">
-              <%= f.submit "Sign up" %>
+              <%= f.submit "Sign up", class: 'btn btn-block btn-success' %>
             </div>
           </div>
           <% end %>
