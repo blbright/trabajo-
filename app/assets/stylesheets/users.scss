@@ -303,12 +303,19 @@ div.user-menu div.user-menu-content:not(.active){
 #index {
  margin: 0 auto;
  width: 100%;
-
+ a {
+  text-decoration: none;
+ }
+ a:hover {
+  text-decoration: none;
+  color: #d3d3d3;
+ }
  h1 {
   font-size: 28px;
  }
  .actions {
   display: inline-block;
+  
  }
  .form{
   &-control {

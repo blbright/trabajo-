@@ -4,7 +4,9 @@
 html, body {
  height: 100%;
 }
-
+.profile-img {
+ width: 140px;
+}
 body {
  overflow-x: hidden;
 }
@@ -76,4 +78,10 @@ body {
   background-color: #5bd2ce !important;
  }
 
+}
+
+
+.handle {
+ font-size: 12px;
+ color: #d3d3d3;
 }
