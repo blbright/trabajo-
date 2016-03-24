@@ -1,7 +1,12 @@
 class PostsController < ApplicationController
 
  def index
-  @posts = Post.all.reverse_order
+  @posts = Post.all
+  if params[:search]
+    @posts = Post.search(params[:search]).reverse_order
+  else
+    @posts = Post.all.reverse_order
+  end
   @post = Post.new
   @posts_comment = @post.comments
  end
@@ -46,7 +51,5 @@ class PostsController < ApplicationController
  def post_params
   params.require(:post).permit(:user_id,:content)
  end
-
-
 
 end
