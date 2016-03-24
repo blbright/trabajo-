@@ -1,5 +1,5 @@
 <% if current_user.sign_in_count == 1 %>
- <div class="alert alert-success" role="alert">Welcome to trabajo, tell us about yourself <a href="/users/edit">here</div>
+ <div class="alert alert-success" role="alert">Welcome to trabajo, tell us about yourself <a href="/users/edit">here</a></div>
 <% end %>
 
 <div id="index">
@@ -44,7 +44,12 @@
         <div class="container">
          <div class="row">
           <div class="col-sm-1">
+
+
+
            <a href="users/<%= p.user.id %>"><%= image_tag(p.user.avatar.url(:thumb), :class => 'img-responsive') %></a>
+
+
           </div>
           <div class="col-sm-11 posts">
            <div class="col-sm-12">
@@ -52,7 +57,7 @@
 
             <p><%= p.content %></p>
             <% @posts_comment.each do |comment|%>
-            <h1><%= comment.thought %></h1>
+            <h1><%= p.comment.thought %></h1>
            <% end %>
            </div>
             <div class="col-sm-12 actions">
