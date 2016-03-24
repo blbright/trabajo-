@@ -58,9 +58,12 @@
             <p><%= p.content %></p>
             <% @posts_comment.each do |comment|%>
             <h1><%= p.comment.thought %></h1>
+
            <% end %>
            </div>
             <div class="col-sm-12 actions">
+             <a href="posts/<%= p.id %>" class="fa fa-lg fa-eye"></a>
+
            <% if p.user == current_user %>
            <%= link_to '', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-lg fa-trash-o' %>
             <%= link_to '', edit_post_path(p), class: 'fa fa-pencil-square-o fa-lg ' %>

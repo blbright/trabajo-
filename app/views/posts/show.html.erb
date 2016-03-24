@@ -1,10 +1,53 @@
-<%= @post.content %>
+<div id="post-show">
+ <div class="containter">
+  <div class="row">
+   <div class="col-sm-12">
+    <div class="panel panel-default">
+     <div class="panel-body">
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Delete'%> |
-<%= link_to 'Back', posts_path %>
+      <blockquote>
+       <h3>"<%= @post.content %>"</h3>
+       <footer>
+        <p><%= @post.user.name %></p>
+       </footer>
 
-<% @comments.each do |c| %>
-  <%= c.thought %>
-  <%= link_to 'Delete',[@post, c], method: :delete, data: { confirm: "Are you sure?"} %>
-<% end %>
+      </blockquote>
+
+      <div class="panel panel-default panel-custom">
+       <div class="panel-heading">
+        Comments
+       </div>
+       <div class="panel-body">
+        <ul class="list-group">
+
+         <% @comments.each do |c| %>
+
+         <li class="list-group-item">
+          <p class="thought"><%= c.thought %></p>
+          <p>
+           created
+           <%= time_ago_in_words(c.created_at) %>
+           ago</p>
+          <% if c.user == current_user %>
+          <%= link_to '',[@post, c], method: :delete, data: { confirm: "Are you sure?"}, class: 'fa fa-lg fa-trash-o' %>
+          <% end %>
+         </li>
+
+         <% end %>
+
+        </ul>
+       </div>
+      </div>
+      <% if @user == current_user %>
+      <%= link_to 'Edit', edit_post_path(@post) %>
+      |
+      <%= link_to 'Delete'%>
+
+      <% end %>
+     </div>
+    </div>
+
+   </div>
+  </div>
+
+ </div>
