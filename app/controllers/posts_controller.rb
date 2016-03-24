@@ -3,7 +3,7 @@ class PostsController < ApplicationController
  def index
   @posts = Post.all.reverse_order
   @post = Post.new
-
+  @posts_comment = @post.comments
  end
 
  def create
@@ -32,6 +32,7 @@ class PostsController < ApplicationController
 
  def show
   @post = Post.find(params[:id])
+  @comments = @post.comments
  end
 
  def destroy

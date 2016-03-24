@@ -3,3 +3,8 @@
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Delete'%> |
 <%= link_to 'Back', posts_path %>
+
+<% @comments.each do |c| %>
+  <%= c.thought %>
+  <%= link_to 'Delete',[@post, c], method: :delete, data: { confirm: "Are you sure?"} %>
+<% end %>
