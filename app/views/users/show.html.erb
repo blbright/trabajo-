@@ -1,6 +1,63 @@
-<%= @user.name %>
+<div class="container">
+  <div class="row">
+   <div class="user-prof">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-md-12">
+          <div class="row">
+           <center>
+           <div class="col-md-6 user-pic">
+             <%= image_tag(@user.avatar.url(:medium), :class => "img-responsive thumbnail prof-img img-circle-prof") %>
+           </div>
+          </center>
+            <div class="col-md-6 right-text">
+              <span id="name"><h1><%= @user.name %></h1></span>
+              <h2 class="username">&iexcl;<%= @user.username %>!</h2>
+              <h4 class="prof-info">Experience</h4>
+              <p><%= @user.experience %> years</p>
+              <h4 class="prof-info">About Me</h4>
+              <p><%= @user.description %></p>
+              <h4 class="prof-info">Position</h4>
+              <p><%= @user.current_position%></p>
 
-<% @posts.each do |post| %>
-<h1><%= post.content %></h1>
+            </div>
 
-<% end %>
+          </div>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+<div class="row">
+  <div class="col-sm-12 col-centered">
+   </div>
+</div>
+</div>
+<div class="container">
+ <div class="row">
+  <div class="col-sm-12">
+    <ul class="list-group">
+      <% @posts.each do |p| %>
+        <li class="list-group-item">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-2">
+                <a href="users/<%= p.user.id %>"><%= image_tag(p.user.avatar.url(:medium), :class => "img-responsive thumbnail") %></a>
+              </div>
+              <div class="col-sm-10 posts">
+               <blockquote>
+                <p><%= p.content %></p>
+               </blockquote>
+               <%= link_to '', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-2x fa-trash-o' %>
+               <%= link_to '', edit_post_path(p), class: 'fa fa-pencil-square-o fa-2x' %>
+              </div>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+ </div>
+</div>
