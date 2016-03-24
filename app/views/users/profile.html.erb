@@ -13,7 +13,7 @@
               <h4 class="prof-info">Position</h4>
               <p><%= current_user.current_position%></p>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 user-pic">
               <%= image_tag(current_user.avatar.url(:medium), :class => "img-responsive thumbnail") %>
             </div>
           </div>
@@ -49,7 +49,7 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-2">
-              <a href="users/<%= p.user.id %>"><img src="http://placehold.it/150x150" class="img-circle img-responsive"></a>
+              <a href="users/<%= p.user.id %>"><%= image_tag(p.user.avatar.url(:medium), :class => "img-responsive thumbnail") %></a>
             </div>
             <div class="col-sm-10 posts">
               <p>&iexcl;<%= p.user.name %>!: <%= p.content %></p>
