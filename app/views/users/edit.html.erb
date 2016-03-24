@@ -8,33 +8,34 @@
      <div class="panel-body form-group">
      <%= form_for (@user) do |f| %>
       <div class="field">
-       <%= f.label :name %>
+      <h4>What's your name?</h4>
        <%= f.text_field :name, class: 'form-control'%>
       </div>
       <div class="field">
-       <%= f.label :email %>
+       <h4>What's your email?</h4>
        <%= f.text_field :email, class: 'form-control' %>
       </div>
       <div class="field">
-       <%= f.label :experience %>
+       <h4>How many years of experience do you have?</h4>
        <%= f.number_field :experience, class: 'form-control' %>
       </div>
       <div class="field">
-       <%= f.label :description %>
+       <h4>Tell us about yourself</h4>
        <%= f.text_field :description, class: 'form-control form-big' %>
       </div>
       <div class="field">
-       <%= f.label :current_postition %>
+       <h4>What do you do right now?</h4>
        <%= f.text_field :current_position, class: 'form-control' %>
       </div>
-      <div class="field">
-       <%= f.file_field :avatar, class: 'form-control'%>
+      <div class="field img-field">
+       <h4>What do you look like?</h4>
+       <%= f.file_field :avatar, class: 'form-control form-img'%>
       </div>
       <div class="field btn-submit">
       <%= f.submit class: 'btn btn-info btn-block' %>
      </div>
      <% end %>
-     <%= link_to 'Destroy', @user, method: :delete, data: { confirm: "yer makin a bad decision" }, class: 'btn btn-danger btn-md' %>
+     <%= link_to 'Delete Account', @user, method: :delete, data: { confirm: "yer makin a bad decision" }, class: 'btn btn-danger btn-submit btn-block' %>
    </div>
   </div>
  </div>

@@ -49,6 +49,14 @@
 
 #edit {
  text-align: center;
+ h1 {
+  font-family: 'Montserrat', serif;
+
+ }
+
+ .img-field {
+  margin: 0 auto;
+ }
  .form{
   &-group{
    margin: 0 auto;
@@ -57,6 +65,9 @@
    text-align: center;
    width: 60%;
    margin: 0 auto;
+  }
+  &-img {
+   text-align: center;
   }
 
  }
