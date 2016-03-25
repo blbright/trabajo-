@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
     resources :posts do
+      member do
+        patch 'vote'
+      end
       resources :comments
-    end
+        end
     root 'posts#index'
 end
