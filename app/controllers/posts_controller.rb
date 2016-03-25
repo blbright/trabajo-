@@ -22,6 +22,15 @@ class PostsController < ApplicationController
   session[:return_to] ||= request.referer
  end
 
+ def vote
+   @post = Post.find(params[:id])
+   if @post.votes.create(user: current_user)
+     redirect_to(posts_path)
+   else
+     redirect_to(posts_path)
+   redirect_to :back
+ end
+
  def update
   @post = Post.find(params[:id])
     respond_to do |format|
@@ -33,20 +42,13 @@ class PostsController < ApplicationController
     end
   end
 
-def vote
-  @post = Post.find(params[:id])
-  if @post.votes.create(user: current_user)
-    redirect_to(posts_path)
-  else
-    redirect_to(posts_path)
-  redirect_to :back
-end
+  def show
+   @post = Post.find(params[:id])
+   @comments = @post.comments
+   @user = @post.user  end
+  end
 
- def show
-  @post = Post.find(params[:id])
-  @comments = @post.comments
-  @user = @post.user  end
- end
+
 
 
  def destroy
@@ -61,4 +63,3 @@ end
   params.require(:post).permit(:user_id,:content)
  end
 end
-
