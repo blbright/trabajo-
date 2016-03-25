@@ -10,22 +10,23 @@ class PostsController < ApplicationController
    @post = Post.new
  end
 
-
-  def vote
-    @post = Post.find(params[:id])
-    if @post.votes.create(user: current_user)
-     redirect_to(posts_path)
-    else
-     redirect_to(posts_path)
-    redirect_to :back
-  end
+ def vote
+   @post = Post.find(params[:id])
+   if @post.votes.create(user: current_user)
+    redirect_to(posts_path)
+   else
+    redirect_to(posts_path)
+   end
+ end
 
 
  def show
   @post = Post.find(params[:id])
   @comments = @post.comments
-  @user = @post.user  end
+  @user = @post.user
  end
+
+
 
   def new
    @post = Post.new
