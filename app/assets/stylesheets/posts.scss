@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 html, body {
  height: 100%;
+ background-color: #DBEFEF;
  p {
   font-family: 'Open Sans', serif;
  }
@@ -108,4 +109,7 @@ body {
 #post-show {
  margin: 0 auto;
  width: 80%;
+}
+.list-group-item {
+  margin-bottom: 10px;
 }
