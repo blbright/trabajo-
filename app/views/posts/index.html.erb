@@ -1,7 +1,6 @@
 <% if current_user.sign_in_count == 1 %>
  <div class="alert alert-success" role="alert">Welcome to trabajo, tell us about yourself <a href="/users/edit">here</a></div>
 <% end %>
-
 <div id="index">
  <div class="container-fluid">
   <div class="row">
@@ -39,15 +38,14 @@
       </div>
      </div>
      <div class="col-sm-9">
-      <div class="input-group yep">
-      <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" , class: 'form-control'%>
-
-      <span class="input-group-btn clear">
-      <%= submit_tag "Search", class: 'btn btn-info' %>
-     </span>
-     </div>
+       <div class="input-group yep">
+       <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+       <%= text_field_tag :search, params[:search], placeholder: "Search Posts" , class: 'form-control'%>
+       <span class="input-group-btn clear">
+       <%= submit_tag "Search", class: 'btn btn-info' %>
+      </span>
       <% end %>
+     </div>
 
       <% if @posts.present? %>
         <% @posts %>
@@ -60,37 +58,38 @@
         <div class="container">
          <div class="row">
           <div class="col-sm-1">
-
-
            <a href="users/<%= p.user.id %>"><%= image_tag(p.user.avatar.url(:thumb), :class => 'img-responsive') %></a>
-
-
           </div>
-          <div class="col-sm-11 posts">
-           <div class="col-sm-12">
+          <div class="col-sm-8 posts">
            <h3><%= p.user.name %><span class="handle"><span> &iexcl;<%= p.user.username %>!:</span></h3>
            <blockquote>
             <p><%= p.content %></p>
            </blockquote>
-            <p><%= p.comments.first.thought  %></p>
             <p>Likes: <%= p.votes.count %></p>
-
-           </div>
-           <div class="row">
-            <div class="col-sm-12 actions">
-            <p> <a href="posts/<%= p.id %>" class="fa fa-lg fa-eye">See More</a></p>
-           <% if p.user == current_user %>
-           <%= link_to '', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-lg fa-trash-o' %>
-           <%= link_to '', edit_post_path(p), class: 'fa fa-pencil-square-o fa-lg ' %>
-
+            <p>Comments:</p>
+            <% if p.comments != nil %>
+            <p>There are no comments</p>
             <% else %>
-            <%= link_to '', vote_post_path(p), method: :patch, class: 'fa fa-lg fa-heart'%>
+            <p><% p.comments.first.thought %></p>
+            <% end %>
+           </div>
+            <div class="col-sm-3 actions">
+
+            <p> <a href="posts/<%= p.id %>" class="fa fa-lg fa-eye"></a></p>
+            <% if p.user == current_user %>
+            <%= link_to '', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-lg fa-trash-o' %>
+             <% else %>
+             <%= link_to '', vote_post_path(p), method: :patch, class: 'fa fa-lg fa-heart'%>
+           <% end %>
+
+          </div>
+           </li>
           <% end %>
-
-            </div>
-
-          <% end %>
-
-
+         </ul>
+        </div>
+       </div>
+      </div>
+      <%= link_to 'Back to All Posts', '/' %>
+   </div>
 </div>
-<%= link_to 'Back to All Posts', '/' %>
+</div>

@@ -66,7 +66,7 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-2">
-                <a href="users/<%= p.user.id %>"><%= image_tag(p.user.avatar.url(:medium), :class => "img-responsive thumbnail") %></a>
+               <%= image_tag(p.user.avatar.url(:medium), :class => "img-responsive thumbnail") %>
               </div>
               <div class="col-sm-10 posts">
                <blockquote>
