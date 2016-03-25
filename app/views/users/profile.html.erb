@@ -71,6 +71,7 @@
               <div class="col-sm-10 posts">
                <blockquote>
                 <p><%= p.content %></p>
+                <p>Likes: <%=  p.votes.count %></p>
                </blockquote>
                <%= link_to '', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-2x fa-trash-o' %>
                <%= link_to '', edit_post_path(p), class: 'fa fa-pencil-square-o fa-2x' %>

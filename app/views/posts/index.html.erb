@@ -73,20 +73,22 @@
             <p><%= p.content %></p>
            </blockquote>
             <p><%= p.comments.first %></p>
-            <%= p.votes.count %>
+            <p>Likes: <%= p.votes.count %></p>
            </div>
            <div class="row">
             <div class="col-sm-12 actions">
              <a href="posts/<%= p.id %>" class="fa fa-lg fa-eye"></a>
            <% if p.user == current_user %>
            <%= link_to '', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-lg fa-trash-o' %>
-            <%= link_to '', edit_post_path(p), class: 'fa fa-pencil-square-o fa-lg ' %>
-            <%= link_to 'vote', vote_post_path(p), method: :patch, class: 'btn btn-default btn-xs'%>
+           <%= link_to '', edit_post_path(p), class: 'fa fa-pencil-square-o fa-lg ' %>
+
+            <% else %>
+            <%= link_to '', vote_post_path(p), method: :patch, class: 'fa fa-lg fa-heart'%>
           <% end %>
+
             </div>
 
           <% end %>
      <%= link_to 'Back to All Posts', '/' %>
 
 </div>
-
