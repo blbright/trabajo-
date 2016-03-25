@@ -9,7 +9,7 @@
            <div class="col-md-6 user-pic">
              <%= image_tag(@user.avatar.url(:medium), :class => "img-responsive thumbnail prof-img img-circle-prof") %>
            </div>
-          </center>
+           </center>
             <div class="col-md-6 right-text">
               <span id="name"><h1><%= @user.name %></h1></span>
               <h2 class="username">&iexcl;<%= @user.username %>!</h2>
@@ -50,8 +50,10 @@
                <blockquote>
                 <p><%= p.content %></p>
                </blockquote>
-               <%= link_to '', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-2x fa-trash-o' %>
-               <%= link_to '', edit_post_path(p), class: 'fa fa-pencil-square-o fa-2x' %>
+               <% if p.user == current_user %>
+                 <%= link_to '', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-2x fa-trash-o' %>
+                 <%= link_to '', edit_post_path(p), class: 'fa fa-pencil-square-o fa-2x' %>
+               <% end %>
               </div>
             </div>
           </div>
