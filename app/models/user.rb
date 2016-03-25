@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
 groupify :group_member
 groupify :named_group_member
 
@@ -9,7 +10,7 @@ has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>", squa
  has_many :votes
  has_many :comments
 
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
 end

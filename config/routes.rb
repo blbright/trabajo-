@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
-  get 'profile' => 'users#profile'
-  get 'users/edit'
-  get '/imgone' => 'users#delete'
   devise_for :users
-  resources :users
+  get 'profile' => 'users#profile'
+  get 'settings' => 'users#edit'
+  resources :users do
+    member do
+      get :confirm_email
+    end
+  end
     resources :posts do
       member do
         patch 'vote'
       end
       resources :comments
-        end
+    end
     root 'posts#index'
 end

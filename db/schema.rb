@@ -78,6 +78,9 @@ ActiveRecord::Schema.define(version: 20160325142525) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "username"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "confirmation_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
