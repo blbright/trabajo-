@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'profile' => 'users#profile'
-  get 'users/edit'
+  get 'settings' => 'users#edit'
   get '/imgone' => 'users#delete'
   resources :users do
     member do
