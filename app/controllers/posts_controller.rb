@@ -10,18 +10,6 @@ class PostsController < ApplicationController
   @post = Post.new
 
  end
-
- def create
-  @post = Post.new(post_params)
-  @post.save
-  redirect_to :back
- end
-
- def edit
-  @post = Post.find(params[:id])
-  session[:return_to] ||= request.referer
- end
-
  def vote
    @post = Post.find(params[:id])
    if @post.votes.create(user: current_user)
@@ -30,6 +18,30 @@ class PostsController < ApplicationController
      redirect_to(posts_path)
    redirect_to :back
  end
+
+
+ def show
+  @post = Post.find(params[:id])
+  @comments = @post.comments
+  @user = @post.user  end
+ end
+
+
+ def create
+  @post = Post.new(post_params)
+  @post.save
+  redirect_to :back
+ end
+
+
+
+ def edit
+  @post = Post.find(params[:id])
+  session[:return_to] ||= request.referer
+ end
+
+
+
 
  def update
   @post = Post.find(params[:id])
@@ -42,11 +54,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
-   @post = Post.find(params[:id])
-   @comments = @post.comments
-   @user = @post.user  end
-  end
 
 
 
