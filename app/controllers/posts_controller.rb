@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
  def index
   @posts = Post.all
+  @comments = @posts.first.comments
    if params[:search]
     @posts = Post.search(params[:search]).reverse_order
    else
