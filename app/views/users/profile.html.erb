@@ -14,7 +14,13 @@
               <span id="name"><h1><%= current_user.name %></h1></span>
               <h2 class="username">&iexcl;<%= current_user.username %>!</h2>
               <h4 class="prof-info">Experience</h4>
-              <p><%= current_user.experience %> years</p>
+
+              <% if current_user.experience === "1"  %>
+                <p>Experience: <%= current_user.experience %> year </p>
+               <% else %>
+                <p>Experience: <%= current_user.experience %> years</p>
+              <% end %>
+
               <h4 class="prof-info">About Me</h4>
               <p><%= current_user.description %></p>
               <h4 class="prof-info">Position</h4>

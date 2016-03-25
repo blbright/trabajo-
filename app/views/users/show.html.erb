@@ -14,7 +14,11 @@
               <span id="name"><h1><%= @user.name %></h1></span>
               <h2 class="username">&iexcl;<%= @user.username %>!</h2>
               <h4 class="prof-info">Experience</h4>
-              <p><%= @user.experience %> years</p>
+              <% if @user.experience === "1"  %>
+                <p><%= @user.experience %> year </p>
+               <% else %>
+                <p><%= @user.experience %> years</p>
+              <% end %>
               <h4 class="prof-info">About Me</h4>
               <p><%= @user.description %></p>
               <h4 class="prof-info">Position</h4>
