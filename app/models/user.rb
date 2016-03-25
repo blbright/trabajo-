@@ -9,6 +9,7 @@ has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>", squa
  has_many :posts, dependent: :destroy
  has_many :votes
  has_many :comments
+ has_many :vote_posts, through: :votes, source: :post
 
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
