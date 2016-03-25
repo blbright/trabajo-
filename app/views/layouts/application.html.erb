@@ -27,7 +27,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="/profile">Profile</a></li>
-            <li><a href="users/edit">Account Settings</a></li>
+            <li><a href="/settings">Account Settings</a></li>
             <li role="separator" class="divider"></li>
             <li><%= link_to 'LogOut', destroy_user_session_path, method: :delete %></li>
           </ul>

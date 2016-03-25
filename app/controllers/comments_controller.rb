@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
     @comment.save
-    redirect_to '/'
+    redirect_to @post
   end
 
   def show
