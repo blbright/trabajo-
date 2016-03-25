@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     @posts = Post.all.reverse_order
   end
   @post = Post.new
-  @posts_comment = @post.comments
+
  end
 
  def create
@@ -33,13 +33,18 @@ class PostsController < ApplicationController
     end
   end
 
-
+def vote
+  @post = Post.find(params[:id])
+  @post.votes.create(user: current_user)
+  redirect_to :back
+end
 
  def show
   @post = Post.find(params[:id])
   @comments = @post.comments
-  @user = @post.user
+  @user = @post.user  end
  end
+
 
  def destroy
   @post = Post.find(params[:id])
@@ -53,4 +58,3 @@ class PostsController < ApplicationController
   params.require(:post).permit(:user_id,:content)
  end
 
-end
