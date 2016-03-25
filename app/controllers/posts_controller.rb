@@ -3,9 +3,9 @@ class PostsController < ApplicationController
  def index
   @posts = Post.all
    if params[:search]
-     @posts = Post.search(params[:search]).reverse_order
+    @posts = Post.search(params[:search]).reverse_order
    else
-     @posts = Post.all.reverse_order
+    @posts = Post.all.reverse_order
    end
    @post = Post.new
  end
@@ -14,9 +14,9 @@ class PostsController < ApplicationController
   def vote
     @post = Post.find(params[:id])
     if @post.votes.create(user: current_user)
-      redirect_to(posts_path)
+     redirect_to(posts_path)
     else
-      redirect_to(posts_path)
+     redirect_to(posts_path)
     redirect_to :back
   end
 
