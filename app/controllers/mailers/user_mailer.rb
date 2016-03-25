@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-    default :from => "me@trabajoo.herokuapp.com"
+    default :from => "trabadoresapp@gmail.com"
   ADD EMAIL ADDRESS
 
  def registration_confirmation(user)
