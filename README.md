@@ -10,3 +10,10 @@ We used **Ruby on Rails**, **Sass**, and **jQuery**
 ![alt text](app/assets/images/home.png "home")
 ![alt text](app/assets/images/index.png "home")
 ![alt text](app/assets/images/prof.png "home")
+# Models
+![alt text](app/assets/images/user.png "user")
+![alt text](app/assets/images/post.png "post")
+![alt text](app/assets/images/comment.png "comment")
+![alt text](app/assets/images/vote.png "vote")
+
+
