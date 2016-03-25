@@ -35,7 +35,10 @@ class PostsController < ApplicationController
 
 def vote
   @post = Post.find(params[:id])
-  @post.votes.create(user: current_user)
+  if @post.votes.create(user: current_user)
+    redirect_to(posts_path)
+  else
+    redirect_to(posts_path)
   redirect_to :back
 end
 
@@ -57,4 +60,5 @@ end
  def post_params
   params.require(:post).permit(:user_id,:content)
  end
+end
 
