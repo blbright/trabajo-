@@ -3,6 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 html, body {
  height: 100%;
+ a:hover {
+  text-decoration: none;
+  .fa {
+   color: #d3d3d3;
+  }
+ }
+
 }
 .profile-img {
  width: 140px;

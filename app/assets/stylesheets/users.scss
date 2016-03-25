@@ -219,6 +219,7 @@
 }
 
 @media screen and (max-width: 900px) {
+
  .login {
   width: 100%;
  }
@@ -229,14 +230,24 @@
   width: 100%;
   margin: 0 auto !important;
  }
+
 }
 
-@media screen and (min-height: 1000px) {
+@media screen and (max-width: 800px) {
+ #header {
+  h1 {
+   font-size: 100px;
+  }
+ }
+}
+
+@media screen and (min-height: 800px) {
  #header {
   height: 1000px;
+  padding-top: 120px;
  }
  #login {
-  margin-top: 330px;
+  margin-top: 400px;
   padding-bottom: 250px;
  }
 }
