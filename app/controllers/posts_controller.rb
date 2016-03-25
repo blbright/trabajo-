@@ -2,30 +2,35 @@ class PostsController < ApplicationController
 
  def index
   @posts = Post.all
-  if params[:search]
+   if params[:search]
     @posts = Post.search(params[:search]).reverse_order
-  else
+   else
     @posts = Post.all.reverse_order
-  end
-  @post = Post.new
-
+   end
+   @post = Post.new
  end
+
  def vote
    @post = Post.find(params[:id])
    if @post.votes.create(user: current_user)
-     redirect_to(posts_path)
+    redirect_to(posts_path)
    else
-     redirect_to(posts_path)
-   redirect_to :back
+    redirect_to(posts_path)
+   end
  end
 
 
  def show
   @post = Post.find(params[:id])
   @comments = @post.comments
-  @user = @post.user  end
+  @user = @post.user
  end
 
+
+
+  def new
+   @post = Post.new
+  end
 
  def create
   @post = Post.new(post_params)
@@ -34,12 +39,10 @@ class PostsController < ApplicationController
  end
 
 
-
  def edit
   @post = Post.find(params[:id])
   session[:return_to] ||= request.referer
  end
-
 
 
 
@@ -57,7 +60,6 @@ class PostsController < ApplicationController
 
 
 
-
  def destroy
   @post = Post.find(params[:id])
   @post.destroy
@@ -65,6 +67,7 @@ class PostsController < ApplicationController
  end
 
  private
+
 
  def post_params
   params.require(:post).permit(:user_id,:content)
