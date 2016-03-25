@@ -11,11 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-
 //= require jquery_ujs
 //= require_tree .
 
 $(function(){
+
  $('html,body').animate({scrollTop:0},800);
 
  $.fx.speeds.xslow = 1500;
