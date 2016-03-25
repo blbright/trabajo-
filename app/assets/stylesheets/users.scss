@@ -227,3 +227,13 @@
   margin: 0 auto !important;
  }
 }
+
+@media screen and (min-height: 1000px) {
+ #header {
+  height: 1000px;
+ }
+ #login {
+  margin-top: 330px;
+  padding-bottom: 250px;
+ }
+}
