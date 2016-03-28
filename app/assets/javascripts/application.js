@@ -15,9 +15,7 @@
 //= require_tree .
 
 $(function(){
-
  $('html,body').animate({scrollTop:0},800);
-
  $.fx.speeds.xslow = 1500;
  $("a[href='#bottom']").click(function() {
   $("html, body").animate({ scrollTop: $(document).height() }, "xslow");
